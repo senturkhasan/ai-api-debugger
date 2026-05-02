@@ -1,50 +1,62 @@
-🚀 AI API Debugger
+# 🚀 AI API Debugger
 
 An AI-powered tool that analyzes error logs and instantly suggests root causes and possible fixes.
 
-🎯 Features
-Paste error logs and get instant analysis
-Detects root causes using AI
-Suggests actionable fixes
-Severity classification (LOW / MEDIUM / HIGH)
-Clean and simple UI with real-time feedback
-🧠 Tech Stack
-Backend: Java Spring Boot
-Frontend: Angular
-AI: Google Gemini
-Containerization: Docker
-⚙️ Getting Started
-1️⃣ Clone the repository
+---
+
+## 🎯 Features
+
+- 📌 Paste error logs and get instant analysis  
+- 🧠 Detect root causes using AI  
+- 🛠 Suggest actionable fixes  
+- 🚦 Severity classification (LOW / MEDIUM / HIGH)  
+- ⚡ Clean and simple UI with real-time feedback  
+
+---
+
+## 🧠 Tech Stack
+
+- **Backend:** Java Spring Boot  
+- **Frontend:** Angular  
+- **AI:** Google Gemini  
+- **Containerization:** Docker  
+
+---
+
+## ⚙️ Getting Started
+
+### 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/senturkhasan/ai-api-debugger.git
 cd ai-api-debugger
+
 2️⃣ Configure API Key
 
-Create a file named application.yml in the backend project and add your Gemini API key:
+Create application.yml inside the backend:
 
 gemini:
   api:
     key: YOUR_API_KEY_HERE
 
-Alternatively, you can use environment variables:
+Or use environment variables:
 
 export GEMINI_API_KEY=your_api_key
+
 3️⃣ Run Backend
 cd backend
 mvn spring-boot:run
+
 4️⃣ Run Frontend
 cd frontend
 npm install
 ng serve
-🐳 Run with Docker (Optional)
+🐳 Run with Docker
 docker compose up --build
 🧪 Example
-
-Input:
-
+Input
 NullPointerException at UserService line 45
-
-Output:
-
+Output
 {
   "rootCause": "User object is null",
   "fix": "Initialize object or check for null",
@@ -52,11 +64,5 @@ Output:
 }
 💡 Motivation
 
-Debugging logs can be time-consuming and repetitive.
-This project aims to speed up the process by leveraging AI to provide quick insights and solutions.
- 
-
-🔐 Security Note
-
-API keys are not included in the repository.
-Please configure your own key locally using environment variables or configuration files.
+Debugging logs is often repetitive and time-consuming.
+This project helps developers quickly understand errors and find solutions using AI.
