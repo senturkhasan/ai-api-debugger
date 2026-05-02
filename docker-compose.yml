@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - GEMINI_API_KEY=YOUR_API_KEY_HERE
+      - SPRING_PROFILES_ACTIVE=prod
+    networks:
+      - ai-network
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend/ai-debugger-ui   
+      dockerfile: ../Dockerfile  
+    container_name: ai-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - ai-network
+    restart: always
+
+networks:
+  ai-network:
+    driver: bridge
